@@ -2,6 +2,8 @@ import React from 'react';
 import './Plane.css';
 import superagent from 'superagent';
 
+const url = 'https://mediator-git-blocker-awareness.snakes-on-a-plane.now.sh/api';
+
 export default class Plane extends React.Component {
 
     constructor(props) {
@@ -14,7 +16,7 @@ export default class Plane extends React.Component {
 
     async componentDidMount() {
         try {
-            const gameData = await superagent.get('https://nower-snakes.jb-tellez.now.sh/api')
+            const gameData = await superagent.get(url)
 
             console.log(gameData.body);
             this.setState(gameData.body);
@@ -44,9 +46,9 @@ export default class Plane extends React.Component {
 
     move = async (direction) => {
 
-        const url = `https://nower-snakes.jb-tellez.now.sh/api?direction=${direction}&x=${this.state.player_pos.x}&y=${this.state.player_pos.y}`
+        const full_url = `${url}?direction=${direction}&x=${this.state.player_pos.x}&y=${this.state.player_pos.y}`
         
-        const gameData = await superagent.get(url)
+        const gameData = await superagent.get(full_url)
 
         this.setState(gameData.body);
 
@@ -61,10 +63,10 @@ export default class Plane extends React.Component {
 
                 </div>
                 <div>
-                    <button onClick={() => this.move("west")}>Move West</button>
-                    <button onClick={() => this.move("east")}>Move East</button>
-                    <button onClick={() => this.move("north")}>Move North</button>
-                    <button onClick={() => this.move("south")}>Move South</button>
+                    <button onClick={() => this.move("left")}>Move Left</button>
+                    <button onClick={() => this.move("right")}>Move Right</button>
+                    <button onClick={() => this.move("up")}>Move Up</button>
+                    <button onClick={() => this.move("down")}>Move Down</button>
                 </div>
             </div>
         )
