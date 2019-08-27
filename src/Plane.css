@@ -1,0 +1,32 @@
+.Plane {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 4fr 5fr 5fr 5fr 10fr 5fr 5fr 5fr 4fr;
+  }
+  
+  .cell {
+    background-color: gray;
+    border: 1px solid gray;
+    color: black;
+    height: 50px;
+  }
+  
+  .exit {
+    background-color: blue;
+  }
+  
+  .seat {
+    background-color: yellow;
+  }
+  
+  .aisle {
+    background-color: green;
+  }
+
+  .player {
+    background-color: red;
+  }
+
+  .snake {
+    background-color: purple;
+  }
