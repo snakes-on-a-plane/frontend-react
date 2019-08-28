@@ -1,8 +1,8 @@
 import React from 'react';
-import './Plane.css';
+import './Plane.scss';
 import superagent from 'superagent';
 
-const url = 'https://mediator-git-blocker-awareness.snakes-on-a-plane.now.sh/api';
+const url = 'https://mediator-git-bigger-plane.snakes-on-a-plane.now.sh/api';
 
 export default class Plane extends React.Component {
 
